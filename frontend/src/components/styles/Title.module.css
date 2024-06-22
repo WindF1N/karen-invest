@@ -1,0 +1,47 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 0;
+  height: 32px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 300;
+
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.text > div {
+  font-size: 12px;
+  color: #aaa;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  white-space: nowrap;
+}
+
+.text > div > img {
+  filter: brightness(.5);
+  display: flex;
+  height: 10px;
+  margin-top: 1px;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.view img {
+  display: flex;
+  width: 30px;
+  height: 30px;
+}

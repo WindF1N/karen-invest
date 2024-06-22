@@ -1,0 +1,194 @@
+.post {
+  background-color: #18181A;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+}
+
+.header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.avatar img {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  z-index: 3;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.information {
+  display: flex;
+  flex-flow: column;
+  gap: 2.5px;
+}
+
+.information > span:nth-child(1) {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.information > span:nth-child(2) {
+  font-size: 12px;
+  font-weight: 300;
+  color: #888;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-right: -10px;
+}
+
+.like img {
+  width: 25px;
+}
+
+.imagesWrapper {
+  position: relative;
+  height: 75vw;
+  overflow: hidden;
+}
+
+.images {
+  padding-bottom: 30px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.image {
+  width: 100vw;
+  height: 100%;
+}
+
+.image img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.scrollbar {
+  position: absolute;
+  bottom: 2.5vw;
+  left: 2.5vw;
+  width: 95vw;
+  height: 3px;
+  border-radius: 3px;
+  background-color: rgba(51,51,51,.5);
+  overflow: hidden;
+}
+
+.scrollbar > div {
+  height: 100%;
+  width: 33.33%;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.body {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}
+
+.price {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 11px;
+  font-weight: 300;
+  color: #888;
+
+  margin-top: 10px;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.lastComment {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  border-top: .5px solid #292929;
+}
+
+.lastComment > div:first-child {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.lastComment > div:first-child span {
+  color: #888;
+  font-weight: 400;
+  margin-left: 2.5px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment img {
+  width: 25px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.comment span {
+  font-size: 12px;
+}
+
+.count {
+  position: absolute;
+  top: 2.5vw;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count > div {
+  background-color: rgba(17, 17, 17, .5);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 300;
+}

@@ -1,0 +1,131 @@
+.wrapper {
+  margin-left: -15px;
+  width: 100vw;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.flex20gap {
+  display: flex;
+  flex-flow: column;
+
+  gap: 20px;
+
+  padding-bottom: 150px;
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.strangeInput {
+  background-color: #18181A;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 10px;
+
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.strangeInput img {
+  height: 10px;
+}
+
+.header {
+  padding: 10px 5px 15px 5px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: .3s;
+}
+
+.header > div {
+  flex-shrink: 1;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0884FE;
+  font-size: 16px;
+}
+
+.header > div:first-child {
+  justify-content: flex-start;
+}
+
+.header > div:last-child {
+  justify-content: flex-end;
+}
+
+.moreWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  z-index: 9998;
+  overflow-x: hidden;
+  max-height: 100vh;
+}
+
+.more {
+  padding: 0 10px;
+}
+
+.text {
+  display: flex;
+  background-color: #18181A;
+  padding: 10px;
+  border-bottom: .5px solid #313131;
+}
+
+.label {
+  display: flex;
+  background-color: #18181A;
+  padding: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: .5px solid #313131;
+}
+
+.label div {
+  font-size: 12px;
+}
+
+.text div {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.text div:first-child, .label div:first-child {
+  width: calc(100vw - 40px - 10%)
+}
+
+.text div:nth-child(2), .text div:nth-child(3), .label div:nth-child(2), .label div:nth-child(3) {
+  width: calc(100vw - 40px - 50%)
+}
+
+.text:first-child{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.text:last-child{
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: none;
+}

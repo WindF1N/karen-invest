@@ -1,0 +1,36 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item {
+    background-color: #18181A;
+
+    width: calc(50% - 5px);
+    height: 35vw;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column;
+
+    border-radius: 8px;
+}
+
+.item span {
+    font-size: 13px;
+    font-weight: 300;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.item div {
+    font-size: 11px;
+    font-weight: 300;
+    color: #aaa;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}

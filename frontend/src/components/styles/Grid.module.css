@@ -1,0 +1,165 @@
+.grid .cellBig {
+  position: relative;
+  width: 100%;
+  height: 31vh;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.grid .cellBig .image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.grid .cellBig .image img{
+  width: 100%;
+  height: 31vh;
+  object-fit: cover;
+}
+
+.grid .cellBig .information {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 26px);
+  padding: 13px;
+  border-radius: 6px;
+  background-color: rgba(0,0,0,.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.grid .cellBig .information .title {
+  font-size: 18px;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid .cellBig .information .price {
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 4px;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid .line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.grid .line .cellSmall:first-child{
+  margin-right: 5px;
+}
+
+.grid .line .cellSmall:last-child{
+  margin-left: 5px;
+}
+
+.grid .line .cellSmall {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.grid .line .cellSmall .image {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+}
+
+.grid .line .cellSmall .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid .line .cellSmall .information {
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 44, 46, .8);
+}
+
+.grid .line .cellSmall .information .title {
+  font-size: 13px;
+  font-weight: 300;
+  padding: 5px 5px 0 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.grid .line .cellSmall .information .price {
+  font-size: 11px;
+  font-weight: 300;
+  color: #aaa;
+  padding: 0 5px 5px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*  */
+
+.grid .line .cellMiddle {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.grid .line .cellMiddle .image {
+  position: relative;
+  width: 100%;
+  height: 14vh;
+}
+
+.grid .line .cellMiddle .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid .line .cellMiddle .information {
+  background-color: rgba(44, 44, 46, .8);
+  margin-top: 0;
+}
+
+.grid .line .cellMiddle .information .title {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5px 8px 0px 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.grid .line .cellMiddle .information .price {
+  font-size: 12px;
+  font-weight: 300;
+  color: #aaa;
+  padding: 3px 8px 5px 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid .line .cellMiddle:first-child{
+  margin-right: 5px;
+}
+
+.grid .image span {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin-left: -1px;
+  margin-top: -1px;
+}

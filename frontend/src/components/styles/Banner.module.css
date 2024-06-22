@@ -1,0 +1,20 @@
+.buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.banner {
+  padding: 20px 10px 150px 10px;
+  margin-top: 20px;
+
+  border-top: .5px solid #191919;
+}
+
+.banner > span {
+  font-size: 16px;
+  padding-bottom: 10px;
+
+  display: block;
+}

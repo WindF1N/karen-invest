@@ -1,0 +1,87 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #000;
+}
+
+.avatar > div:first-child {
+  width: 20vw;
+  height: 30vw;
+}
+
+.avatar > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.avatar > div:nth-child(2) {
+  color: #0B84FE;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.cropAvatarWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: rgba(0,0,0,1);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0; /* Элемент скрыт изначально */
+  animation: fadeIn .4s ease-in-out forwards; /* Анимация fadeIn, длительность 2 секунды */
+}
+
+.cropAvatar {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+
+  padding: 20px;
+  background-color: #000;
+}
+
+.cropAvatar .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.cropAvatar button {
+  border: 0;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+  width: 100%;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

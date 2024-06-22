@@ -1,0 +1,245 @@
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  display: flex;
+  width: 34px;
+  height: 34px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.30);
+
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+
+  backdrop-filter: blur(5px);
+}
+
+.fixed-button img {
+  width: 100%;
+  margin-top: -5px;
+  height: 100%;
+}
+
+.fixed-button-back {
+  position: fixed;
+  bottom: 27.5px;
+  right: 90px;
+  z-index: 9998;
+
+  display: flex;
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.30);
+
+  transition: transform 0.2s, opacity 0.4s;
+
+  backdrop-filter: blur(5px);
+}
+
+.fixed-button-back img {
+  transform: rotate(180deg);
+  width: 7px;
+  margin-left: -2px
+}
+
+.fixed-button-up {
+  position: fixed;
+  bottom: 90px;
+  right: 29.5px;
+  z-index: 9998;
+
+  display: flex;
+  width: 15px;
+  height: 15px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.30);
+
+  transform: translateY(0);
+  transition: transform 0.2s, opacity 0.4s;
+
+  backdrop-filter: blur(5px);
+}
+
+.fixed-button-up.dif {
+  bottom: 30px;
+}
+
+.fixed-button-up img {
+  transform: rotate(-90deg);
+  width: 7px;
+}
+
+.fixed-button.add {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.fixed-button.search {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.fixed-button.like {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.fixed-button.messenger {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.fixed-button.home {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.fixed-button.add {
+  transform: translateY(0) scale(.1);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.fixed-button.add.visible {
+  transform: translateY(-65px) scale(.9);
+  opacity: 1;
+}
+
+.fixed-button.add img {
+  margin-top: 0;
+}
+
+.fixed-button.search.visible {
+  transform: translateY(-195px) scale(.95);
+  opacity: 1;
+}
+
+.fixed-button.like.visible {
+  transform: translateY(-260px) scale(.95);
+  opacity: 1;
+}
+
+.fixed-button.home.visible {
+  transform: translateY(-130px) scale(.95);
+  opacity: 1;
+}
+
+.fixed-button.messenger.visible {
+  transform: translateY(-325px) scale(.95);
+  opacity: 1;
+}
+
+.fixed-button.search img {
+  margin-top: 0;
+  width: 70%;
+}
+
+.fixed-button.like img {
+  margin-top: 0;
+  width: 100%;
+}
+
+.fixed-button.home img {
+  margin-top: 0;
+  width: 90%;
+}
+
+.fixed-button.messenger img {
+  margin-top: 0;
+  width: 80%;
+}
+
+.fixed-button-up.visible {
+  transform: translateY(-60px) scale(.95);
+  opacity: 1;
+}
+
+.upper .fixed-button {
+  bottom: calc(20px + 9.26%);
+}
+
+.upper .fixed-button-back {
+  bottom: calc(25px + 9.26%);
+}
+
+.upper .fixed-button-up {
+  bottom: calc(90px + 9.26%);
+}
+
+.send .fixed-button-back {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.send .fixed-button-up {
+  transform: scale(.8);
+}
+
+.send .fixed-button {
+  transform: rotate(90deg);
+}
+
+.fixed-message {
+  position: fixed;
+  bottom: 37.5px;
+  right: 95px;
+  
+
+  display: flex;
+  height: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+
+  transition: transform 0.2s, opacity 0.4s;
+
+  backdrop-filter: blur(5px);
+
+  font-size: 12px;
+  font-weight: 300;
+}
+
+
+.fixed-message > div:nth-child(2) {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  position: absolute;
+  right: -13.5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+}

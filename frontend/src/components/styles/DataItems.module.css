@@ -1,0 +1,23 @@
+.items {
+  background-color: #18181A;
+  border-radius: 4px;
+}
+
+.items .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px;
+
+  border-bottom: .5px solid #292929;
+}
+
+.items .item:last-child {
+  border-bottom: none;
+}
+
+.items .item > div {
+  font-size: 14px;
+  font-weight: 300;
+}

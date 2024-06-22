@@ -1,0 +1,75 @@
+.items {
+  border-radius: 4px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.items .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 10px;
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0.35) 0%, rgba(51, 51, 51, 0.50) 100%);
+  border-radius: 8px;
+}
+
+.image img {
+  width: 25vw;
+  height: 20vw;
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+.information {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.information > div:nth-child(1) {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.information > div:nth-child(2) {
+  font-size: 12px;
+  font-weight: 300;
+  color: #aaa;
+}
+
+.avatar {
+  margin-left: auto;
+  min-width: 25%;
+
+  display: flex;
+  flex-flow: column;
+}
+
+.avatar img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-bottom: auto;
+  display: block;
+}
+
+.city {
+  margin-top: 10px;
+}
+
+.city, .views {
+  font-size: 10px;
+  color: #aaa;
+  font-weight: 300;
+  text-align: right;
+}
+
+.stars img{
+  height: 12px;
+  width: auto;
+}

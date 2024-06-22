@@ -1,0 +1,133 @@
+.view {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    padding: 0 10px 200px 10px;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addphoto {
+    padding: 5px 7.5px;
+    background-color: #18181A;
+    border-radius: 8px;
+}
+
+.addphoto img {
+    height: 35px;
+    margin-bottom: -2.5px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.line .cellMiddle {
+    position: relative;
+    width: calc(50% - 5px);
+    overflow: hidden;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+  
+.line .cellMiddle .image {
+    position: relative;
+    width: 100%;
+    height: 14vh;
+}
+  
+.line .cellMiddle .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.line .cellMiddle .information {
+    background-color: rgba(44, 44, 46, .8);
+    margin-top: 0;
+}
+  
+.line .cellMiddle .information .title {
+    font-size: 16px;
+    font-weight: 300;
+    padding: 5px 8px 0px 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+.line .cellMiddle .information .price {
+    font-size: 12px;
+    font-weight: 300;
+    color: #aaa;
+    padding: 3px 8px 5px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.image span {
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.list {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item .image {
+    position: relative;
+    width: 50%;
+    height: 15vh;
+}
+  
+.item .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item .information {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+}
+
+.item .information .title {
+    font-size: 16px;
+    font-weight: 300;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+.item .information .price {
+    font-size: 12px;
+    font-weight: 300;
+    color: #aaa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

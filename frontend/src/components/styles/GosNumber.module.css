@@ -1,0 +1,78 @@
+.gosnumber {
+    position: relative;
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 200px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    padding: 3px;
+    display: flex;
+    gap: 3px;
+    transform-origin: 95% 95%;
+}
+
+.gosnumber input {
+    display: block;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+
+    text-align: center;
+    width: auto;
+    min-width: none;
+}
+
+.gosnumber input::placeholder {
+    color: #e8e8e8
+}
+
+.gosnumber input:disabled {
+    color: #000;
+    background: #fff;
+    -webkit-text-fill-color: #000;
+    opacity: 1; /* required on iOS */
+}
+
+.gosnumber input:focus {
+    outline: 0;
+}
+
+.gosnumber > input {
+    border-radius: 3px;
+    font-size: 28px;
+    width: 70%;
+    flex-shrink: 0;
+}
+
+.gosnumber > div {
+    background-color: #fff;
+    width: calc(30% - 3px);
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gosnumber > div > input {
+    width: 100%;
+    font-size: 20px;
+}
+
+.gosnumber > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.gosnumber > div > div > img {
+    width: 14px!important;
+    height: auto!important;
+    object-fit: none!important;
+}

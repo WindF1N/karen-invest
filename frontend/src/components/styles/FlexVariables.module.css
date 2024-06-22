@@ -1,0 +1,42 @@
+.wrapper {
+  height: 40px;
+  overflow: hidden;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+}
+
+.flexVariables {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding-bottom: 30px;
+  overflow-x: auto;
+}
+
+.variable {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #191919;
+  padding: 10px 10px;
+}
+
+.variableActive {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  padding: 10px 10px;
+}
+
+.variable span,
+.variableActive span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.variable span {
+  color: #aaa;
+}

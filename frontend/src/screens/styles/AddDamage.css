@@ -1,0 +1,507 @@
+.AddDamage {
+    min-height: 100vh;
+    padding-bottom: 150px;
+  }
+  
+  .AddDamage .images {
+    position: relative;
+  }
+  
+  .AddDamage .images .hack {
+    height: 70vw;
+    overflow-y: hidden;
+  }
+  
+  .AddDamage .images .hack > div{
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: auto;
+    display: flex;
+    padding-bottom: 20px;
+  }
+  
+  .AddDamage .images .images-count {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .AddDamage .images .images-count div {
+    background-color: rgba(17, 17, 17, .5);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 300;
+  }
+  
+  .AddDamage .images .scroll-bar {
+    background-color: rgba(17, 17, 17, .5);
+    width: 95vw;
+    height: 3px;
+    position: absolute;
+    bottom: 10px;
+    left: 2.5vw;
+    z-index: 999;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .AddDamage .images .scroll-bar .scroll-bar-active {
+    background-color: #fff;
+    width: 33.33%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .AddDamage .images .image {
+    position: relative;
+    width: 100vw;
+    height: 70vw;
+  }
+  
+  .AddDamage .images .image img {
+    width: 100vw;
+    height: 70vw;
+    object-fit: cover;
+  }
+  
+  .AddDamage .images .add-image {
+    width: 100%;
+    height: 70vw;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #18181A;
+  }
+  
+  .AddDamage .images .add-image div:first-child img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .AddDamage .images .add-image div:last-child {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  .AddDamage .images .removePhoto {
+    position: absolute!important;
+    top: 10px!important;
+    right: 10px!important;
+    width: 35px!important;
+    height: 35px!important;
+    z-index: 999!important;
+  }
+  
+  .AddDamage .images .removePhoto img {
+    width: 100%!important;
+    height: 100%!important;
+    z-index: 999!important;
+  }
+  
+  .AddDamage .mini-images {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    padding: 0 5px;
+  }
+  
+  .AddDamage .mini-images .hack {
+    height: calc(10vw + 14px);
+    overflow-y: hidden;
+  }
+  
+  .AddDamage .mini-images .hack > div{
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  .AddDamage .mini-images .image {
+    width: 15vw;
+    height: 10vw;
+    margin-right: 5px;
+    position: relative;
+  }
+  
+  .AddDamage .mini-images .image .remove-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    transition: .2s;
+  }
+  
+  .AddDamage .mini-images .image .remove-image img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .AddDamage .mini-images .add-image {
+    width: 15vw;
+    height: 10vw;
+    margin-right: 5px;
+    margin-top: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  
+  .AddDamage .mini-images .add-image img {
+    width: 30px;
+  }
+  
+  .AddDamage .mini-images .image.active {
+    border: 2px solid #fff;
+    border-radius: 6px;
+  }
+  
+  .AddDamage .mini-images .image img {
+    width: 15vw;
+    height: 10vw;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .AddDamage .mini-images-error {
+    font-size: 12px;
+    font-weight: 300;
+    color: red;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .AddDamage .container .car-title {
+    font-size: 20px!important;
+    font-weight: 300;
+    margin-top: 15px!important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .AddDamage .container .car-title img {
+    width: 8vw;
+    margin-left: 7px;
+  }
+  
+  .AddDamage .container .car-title .actions {
+    display: flex;
+    margin-left: 15px;
+  }
+  
+  .AddDamage .car-price {
+    margin-bottom: 5px;
+  }
+  
+  .AddDamage .car-price span:first-child {
+    font-weight: 200;
+  }
+  
+  .AddDamage .car-price span:last-child {
+    font-weight: 300;
+  }
+  
+  .mb-40 {
+    margin-bottom: 40px;
+  }
+  
+  .AddDamage .car-information {
+    background-color: #18181A;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .AddDamage .car-information .information-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  .AddDamage .car-information .information-line div {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .AddDamage .car-information .information-line div:last-child {
+    font-weight: 400;
+  }
+  
+  .AddDamage .car-information .more {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .AddDamage .car-information .more span {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  
+  .AddDamage .car-information .more img {
+    margin-left: 6px;
+    margin-top: 1px;
+  }
+  
+  .AddDamage .car-information .information-title {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  
+  .AddDamage .car-information .information-p {
+    margin-top: 5px;
+  }
+  
+  .AddDamage .car-information .information-p .information-p-title {
+    font-weight: 400;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .AddDamage .car-information .information-p span {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .AddDamage .block-inputs {
+    margin-bottom: 10px;
+  }
+  
+  .AddDamage .block-input {
+    position: relative;
+  }
+  
+  .AddDamage .block-input.radio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #18181A;
+    width: calc(100% - 20px);
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .AddDamage .block-input.radio input, .block-input.radio label {
+    display: block;
+  }
+  
+  .AddDamage .block-input.radio label {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  .AddDamage .block-input input[type="text"] {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 0;
+    background-color: #18181A;
+    border: 0;
+    border-radius: 0;
+    padding: 17px 10px 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    outline: none;
+    margin: 0;
+    border-bottom: .5px solid #313131;
+  }
+  
+  .AddDamage .block-input:first-child input[type="text"] {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .AddDamage .block-input:last-child input[type="text"] {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: 0;
+  }
+  
+  .AddDamage .block-input textarea {
+    display: block;
+    width: 100%;
+    height: 30vw;
+    padding: 0;
+    background-color: inherit;
+    border: 0;
+    border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    outline: none;
+    margin: 0;
+    overflow: auto;
+    resize: none;
+  }
+  
+  .AddDamage .block-input input[type="text"].error {
+    border: 1px solid red;
+    width: calc(100% - 22px);
+  }
+  
+  .AddDamage .block-input.textarea {
+    padding: 17px 10px 10px 10px;
+    background-color: #18181A;
+  }
+  
+  .AddDamage .block-input.textarea, .AddDamage .block-input.radio {
+    border-bottom: .5px solid #313131;
+  }
+  
+  .AddDamage .block-input.textarea:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .AddDamage .block-input.textarea:last-child{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: 0;
+  }
+  
+  .AddDamage .block-input.textarea.error {
+    border: 1px solid red;
+    width: calc(100% - 22px);
+  }
+  
+  .AddDamage .block-input.radio:first-child{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .AddDamage .block-input.radio:last-child{
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom: 0;
+  }
+  
+  .AddDamage .block-input.radio.error {
+    border-right: 1px solid red;
+    border-left: 1px solid red;
+    width: calc(100% - 22px);
+  }
+  
+  .AddDamage .block-input.radio.error:first-child {
+    border-top: 1px solid red;
+  }
+  
+  .AddDamage .block-input.radio.error:nth-child(3) {
+    border-bottom: 1px solid red!important;
+  }
+  
+  .AddDamage .block-input label {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    transition: .2s;
+  }
+  
+  .AddDamage .block-input label.focused {
+    transform: translateY(-13px);
+    font-size: 11px;
+  }
+  
+  .AddDamage .block-title {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  
+  .AddDamage .block-title .error-label {
+    font-size: 12px;
+    color: red;
+  }
+  
+  .AddDamage .act-image {
+    width: 100%;
+    height: calc(72.7vw - 20px);
+    position: relative;
+  }
+  
+  .AddDamage .act-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .AddDamage .block-input .error-label {
+    color: red;
+    font-size: 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    margin-left: 10px;
+  }
+  
+  .AddDamage .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .AddDamage .ring {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .AddDamage .ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    animation: ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  .AddDamage .ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  
+  .AddDamage .ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  
+  .AddDamage .ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  
+  @keyframes ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

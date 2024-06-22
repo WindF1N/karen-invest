@@ -1,0 +1,31 @@
+.view {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    padding: 0 10px 0px 10px;
+    box-sizing: border-box;
+}
+
+.switch {
+    position: relative;
+    overflow: hidden;
+    background-color: #39383D;
+    width: 51px;
+    height: 31px;
+    border-radius: 31px;
+    display: flex;
+}
+  
+.switch > div {
+    width: 27px;
+    height: 27px;
+    border-radius: 31px;
+    background-color: #fff;
+    margin: 2px;
+    transition: .2s;
+  }
+  
+.switch.active {
+    animation: active .2s ease-in-out 1 forwards;
+}
