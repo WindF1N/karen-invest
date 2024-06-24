@@ -40,7 +40,7 @@ function Post({ postData, type, parent, basePathUrl }) {
   const scrollY = useRef();
   const toggle = () => {
     window.history.replaceState({}, '', '/card/' + data._id);
-    if (account.user?.username === "thecreatxr" || account.user?.username === "Mr_Romadanov") {
+    if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
       sendMessage(JSON.stringify(["cards", "filter", {}, 6]))
     } else {
       sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": false}, 6]))
@@ -450,7 +450,7 @@ function Post({ postData, type, parent, basePathUrl }) {
                     <img src={require("../screens/images/share.svg").default} alt="" />
                     Поделиться
                   </div>
-                  {(account.user?.username === "thecreatxr" || account.user?.username === "Mr_Romadanov") &&
+                  {(account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") &&
                   <div className={styles.action} style={{color: "#8F8E93"}} onClick={() => {
                     window.history.replaceState({}, '', basePathUrl + "?card_id=" + data._id);
                     setPosts([]);

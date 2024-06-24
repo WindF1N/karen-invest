@@ -101,15 +101,15 @@ function Search() {
       //   }
       // }
       setPosts([])
-      if (account.user?.username === "thecreatxr" || account.user?.username === "Mr_Romadanov") {
+      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
         sendMessage(JSON.stringify(["cards", "filter", {...filter_query}, 25, sort, price]));
       } else {
-        sendMessage(JSON.stringify(["cards", "filter", {...filter_query, "is_hidden": false}, 25, sort, price]));
+        sendMessage(JSON.stringify(["cards", "filter", {...filter_query, "is_hidden": {"$ne": true}}, 25, sort, price]));
       }
     } else {
       setSelectedTypes(["Все"])
-      if (account.user?.username === "thecreatxr" || account.user?.username === "Mr_Romadanov") {
-        sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": false}, 25, sort, price]));
+      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
+        sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 25, sort, price]));
       } else {
         sendMessage(JSON.stringify(["cards", "filter", {}, 25, sort, price]));
       }

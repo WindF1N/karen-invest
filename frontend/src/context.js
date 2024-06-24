@@ -12,7 +12,7 @@ const SocketProvider = ({ children }) => {
   const [ loading, setLoading ] = useState(true);
   const [ error, setError ] = useState(null);
 
-  const [ account, setAccount ] = useState(window.Telegram.WebApp.initDataUnsafe);
+  const [ account, setAccount ] = useState(window.Telegram.WebApp.initDataUnsafe?.user?.username ? window.Telegram.WebApp.initDataUnsafe : JSON.parse(localStorage.getItem('usx')) || {});
   const [ accessToken, setAccessToken ] = useState(localStorage.getItem('accessToken'));
   const [ refreshToken, setRefreshToken ] = useState(localStorage.getItem('refreshToken'));
   const [ isFirstLogin, setIsFirstLogin ] = useState(JSON.parse(localStorage.getItem('isFirstLogin')));

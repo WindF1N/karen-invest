@@ -7,7 +7,7 @@ import { useMainContext } from '../context';
 import { useSpringRef, animated, useSpring } from '@react-spring/web';
 
 function Main() {
-  const { sendMessage, message, setMessage, theme, setTheme, account } = useMainContext();
+  const { sendMessage, message, setMessage, theme, setTheme, account, setAccount } = useMainContext();
   const wrapperApi = useSpringRef();
   const wrapperProps = useSpring({
     ref: wrapperApi,
@@ -21,6 +21,7 @@ function Main() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const cardId = params.get('card_id');
+  const username = params.get('usx');
   const navigate = useNavigate();
   const [ posts, setPosts ] = useState([]);
   const handleClick = (e) => {
@@ -36,14 +37,19 @@ function Main() {
   };
   useEffect(() => {
     window.scrollTo({top: 0, smooth: "behavior"});
-    if (account.user?.username === "thecreatxr" || account.user?.username === "Mr_Romadanov") {
+    if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
       sendMessage(JSON.stringify(["cards", "filter", {}, 7]));
     } else {
-      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": false}, 7]));
+      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 7]));
     }
     if (cardId) {
       sendMessage(JSON.stringify(["cards", "filter", {"_id": cardId}, 1]))
     }
+    if (username) {
+      localStorage.setItem("usx", JSON.stringify({"user": {"username": username}}));
+      setAccount({"user": {"username": username}});
+    }
+    console.log(account)
   }, [])
   useEffect(() => {
     if (message && window.location.pathname === "/") {
