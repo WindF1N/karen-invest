@@ -72,7 +72,7 @@ const FixedButton = (props) => {
 
   return (
     <div className={location.pathname === '/search' ? 'upper' : null}>
-      {(account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") &&
+      {(account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) &&
       <div className={`fixed-button add ${isProButtonVisible ? 'visible' : ''}`} onClick={() => navigate('/add')}>
         <img src={require("./images/plus.svg").default} className="" alt="plus" />
       </div>}
@@ -84,7 +84,7 @@ const FixedButton = (props) => {
           <img src={require("./images/arrow-right.svg").default} className="" alt="arrow" />
         </div>}
       {(canScrollUp || props.send) &&
-      <div className={`fixed-button-up ${isProButtonVisible ? 'visible' : ''} ${(account?.user?.username !== "thecreatxr" || account?.user?.username !== "Mr_Romadanov") ? 'dif' : ''}`} onClick={!props.send ? scrollUp : props.onDelete}>
+      <div className={`fixed-button-up ${isProButtonVisible ? 'visible' : ''} ${(account?.user?.username !== "thecreatxr" || account?.user?.username !== "Mr_Romadanov" || account?.user?.user_id !== 956105079) ? 'dif' : ''}`} onClick={!props.send ? scrollUp : props.onDelete}>
         {!props.send ?
           <img src={require("./images/arrow-right.svg").default} alt="arrow" />
           : <img src={require("./images/close.svg").default} alt="arrow" style={{width: "100%"}}/> }

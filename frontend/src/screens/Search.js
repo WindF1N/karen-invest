@@ -51,7 +51,8 @@ function Search() {
     "Дом",
     "Жилое помещение",
     "Здание",
-    "Магазин"
+    "Магазин",
+    "Земельный участок"
   ]
   const [ selectedTypes, setSelectedTypes ] = useState(["Все"]);
   const [ price, setPrice ] = useState([]);
@@ -101,14 +102,14 @@ function Search() {
       //   }
       // }
       setPosts([])
-      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
+      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) {
         sendMessage(JSON.stringify(["cards", "filter", {...filter_query}, 25, sort, price]));
       } else {
         sendMessage(JSON.stringify(["cards", "filter", {...filter_query, "is_hidden": {"$ne": true}}, 25, sort, price]));
       }
     } else {
       setSelectedTypes(["Все"])
-      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
+      if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) {
         sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 25, sort, price]));
       } else {
         sendMessage(JSON.stringify(["cards", "filter", {}, 25, sort, price]));

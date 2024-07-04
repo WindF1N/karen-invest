@@ -17,6 +17,19 @@ body {
   transition: .2s;
 }
 
+/* Отключение выделения текста */
+body {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Стандартный синтаксис */
+}
+
+/* Отключение контекстного меню на изображениях */
+img {
+  pointer-events: none;
+}
+
 body.light {
   background-color: #fff;
   color: var(--main-bg-color);

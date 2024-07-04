@@ -71,7 +71,7 @@ function FormLIGHT({ title, inputs, setInputs, errors, touched }) {
                     {value.mask ?
                       <MaskedInput {...field} type="text"
                                               inputMode='decimal'
-                                              mask={value.mask}
+                                              mask={() => value.mask(field.value)}
                                               onFocus={() => !value.handleClick ? handleFocus(key) : null}
                                               onBlur={() => !value.handleClick ? handleBlur(key, field.value) : null}
                                               className={value.error || (errors[key] && touched[key]) ? styles.error : null}
@@ -168,7 +168,7 @@ function FormLIGHT({ title, inputs, setInputs, errors, touched }) {
                       }}
                       onBlur={() => handleBlur(key, field.value)}
                       rows="1"
-                      maxLength={500}
+                      maxLength={10000}
                       onChange={ev=>{ 
                         ev.target.style.height = 'auto';
                         ev.target.style.height = (ev.target.scrollHeight) + 'px';

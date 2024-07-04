@@ -86,7 +86,7 @@ function MiniSlider({ images, imagesDivRef, activeImage, setActiveImage, canAdd,
     <div className={styles.images}>
       <div className={styles.hack}>
         <div ref={sliderRef} style={style}>
-          {(canAdd && images.length < 10) &&
+          {(canAdd && images.length < 30) &&
             <div className={styles.addImage} onClick={() => document.getElementById('photo-input2').click()}>
               <img src={require("./images/plus2.svg").default} alt="car"/>
               <input

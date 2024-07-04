@@ -37,7 +37,7 @@ function Main() {
   };
   useEffect(() => {
     window.scrollTo({top: 0, smooth: "behavior"});
-    if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov") {
+    if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) {
       sendMessage(JSON.stringify(["cards", "filter", {}, 7]));
     } else {
       sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 7]));

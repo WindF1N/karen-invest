@@ -56,7 +56,7 @@ const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (!socket) {
-      setSocket(io("http://127.0.0.1:5000", {
+      setSocket(io("https://backend.litee.ru:5002", {
         transportOptions: {
           polling: {
             maxHttpBufferSize: 1e8,

@@ -69,7 +69,7 @@ function Add() {
       label: "Тип недвижимости",
       type: "select",
       choices: [
-        "Не выбрано", "Квартиры", "Апартаменты", "Новостройки", "Дом", "Жилое помещение", "Здание", "Магазин"
+        "Не выбрано", "Квартиры", "Апартаменты", "Новостройки", "Дом", "Жилое помещение", "Здание", "Магазин", "Земельный участок"
       ]
     },
     "code": {
@@ -78,18 +78,6 @@ function Add() {
       error: null,
       label: "Код объекта",
       type: "text",
-      mask: createNumberMask({
-        prefix: '',
-        suffix: '',
-        includeThousandsSeparator: true,
-        thousandsSeparatorSymbol: '',
-        allowDecimal: false,
-        decimalSymbol: null,
-        decimalLimit: 0, // количество знаков после запятой
-        integerLimit: 12, // максимальное количество цифр до запятой
-        allowNegative: false,
-        allowLeadingZeroes: false,
-      })
     },
     "site": {
       value: null,
