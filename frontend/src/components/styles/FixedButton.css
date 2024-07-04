@@ -193,6 +193,10 @@
   bottom: calc(90px + 9.26%);
 }
 
+.upper .fixed-button-up.dif {
+  bottom: calc(30px + 9.26%);
+}
+
 .send .fixed-button-back {
   transform: translateX(150%);
   opacity: 0;
