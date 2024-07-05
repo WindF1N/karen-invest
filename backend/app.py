@@ -115,28 +115,6 @@ def handle_message(message):
 
     if message[0] == "cards":
         if message[1] == "filter":
-            mongo.db.cards.update_many(
-            {},
-            [{
-                "$set": {
-                "price_number": {
-                    "$toInt": {
-                        "$replaceAll": {
-                            "input": {
-                                "$replaceAll": {
-                                    "input": "$price",
-                                    "find": "₽",
-                                    "replacement": ""
-                                }
-                            },
-                            "find": " ",
-                            "replacement": ""
-                        }
-                    }
-                }
-                }
-            }]
-            )
             sort_order = []
             try:
                 # Определяем порядок сортировки в зависимости от message[4]
@@ -200,6 +178,28 @@ def handle_message(message):
         elif message[1] == "create":
             message[2]["created_at"] = datetime.now()
             new_card_id = mongo.db.cards.insert_one(message[2]).inserted_id
+            mongo.db.cards.update_many(
+            {"_id": new_card_id},
+            [{
+                "$set": {
+                "price_number": {
+                    "$toInt": {
+                        "$replaceAll": {
+                            "input": {
+                                "$replaceAll": {
+                                    "input": "$price",
+                                    "find": "₽",
+                                    "replacement": ""
+                                }
+                            },
+                            "find": " ",
+                            "replacement": ""
+                        }
+                    }
+                }
+                }
+            }]
+            )
             emit('message', dumps(['cards', 'created', str(new_card_id)]))
         elif message[1] == "update":
             card = mongo.db.cards.find_one(ObjectId(message[4]))
