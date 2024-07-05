@@ -115,6 +115,28 @@ def handle_message(message):
 
     if message[0] == "cards":
         if message[1] == "filter":
+            mongo.cards.update_many(
+            {},
+            [{
+                "$set": {
+                "price_number": {
+                    "$toInt": {
+                        "$replaceAll": {
+                            "input": {
+                                "$replaceAll": {
+                                    "input": "$price",
+                                    "find": "₽",
+                                    "replacement": ""
+                                }
+                            },
+                            "find": " ",
+                            "replacement": ""
+                        }
+                    }
+                }
+                }
+            }]
+            )
             sort_order = []
             try:
                 # Определяем порядок сортировки в зависимости от message[4]
@@ -150,8 +172,6 @@ def handle_message(message):
                     pipeline.extend([
                         { "$sample": { "size": message[3] } }
                     ])
-            # Добавляем $addFields после первого $match
-            pipeline.append({"$addFields": {"price_number": {"$toInt": {"$replaceAll": {"input": {"$replaceAll": {"input": "$price", "find": "₽", "replacement": ""}}, "find": " ", "replacement": ""}}}}})
             # Добавляем фильтрацию по цене, если она определена
             if min_max_prices_match is not None:
                 pipeline.append({"$match": min_max_prices_match})
