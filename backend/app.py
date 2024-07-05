@@ -155,7 +155,7 @@ def handle_message(message):
             # Добавляем фильтрацию по цене, если она определена
             if min_max_prices_match is not None:
                 pipeline.append({"$match": min_max_prices_match})
-            if message[4]:
+            if len(message) > 4:
                 if message[4] != 0:
                     # Добавляем сортировку и ограничение
                     pipeline.extend([
