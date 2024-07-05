@@ -144,18 +144,19 @@ def handle_message(message):
             pipeline = [
                 {"$match": reverse_prepare_data(message[2])},  # Фильтрация по message[2]
             ]
-            # Добавляем $addFields после первого $match
-            pipeline.append({"$addFields": {"price_number": {"$toInt": {"$replaceAll": {"input": {"$replaceAll": {"input": "$price", "find": "₽", "replacement": ""}}, "find": " ", "replacement": ""}}}}})
-            # Добавляем фильтрацию по цене, если она определена
-            if min_max_prices_match is not None:
-                pipeline.append({"$match": min_max_prices_match})
             if message[4]:
                 if message[4] == 0:
                     # Добавляем рандом
                     pipeline.extend([
                         { "$sample": { "size": 1 } }
                     ])
-                else:
+            # Добавляем $addFields после первого $match
+            pipeline.append({"$addFields": {"price_number": {"$toInt": {"$replaceAll": {"input": {"$replaceAll": {"input": "$price", "find": "₽", "replacement": ""}}, "find": " ", "replacement": ""}}}}})
+            # Добавляем фильтрацию по цене, если она определена
+            if min_max_prices_match is not None:
+                pipeline.append({"$match": min_max_prices_match})
+            if message[4]:
+                if message[4] != 0:
                     # Добавляем сортировку и ограничение
                     pipeline.extend([
                         {"$sort": SON(sort_order)},
