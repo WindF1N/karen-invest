@@ -153,7 +153,7 @@ def handle_message(message):
                 if message[4] == 0:
                     # Добавляем рандом
                     pipeline.extend([
-                        { "$sample": { "size": message[3] } }
+                        { "$sample": { "size": 1 } }
                     ])
                 else:
                     # Добавляем сортировку и ограничение
