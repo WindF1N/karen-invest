@@ -160,13 +160,13 @@ def handle_message(message):
                     # Добавляем сортировку и ограничение
                     pipeline.extend([
                         {"$sort": SON(sort_order)},
-                        # {"$limit": message[3]}
+                        {"$limit": message[3]}
                     ])
             else:
                 # Добавляем сортировку и ограничение
                 pipeline.extend([
                     {"$sort": SON(sort_order)},
-                    # {"$limit": message[3]}
+                    {"$limit": message[3]}
                 ])
             # Выполняем агрегацию
             cards = list(mongo.db.cards.aggregate(pipeline))
