@@ -19,7 +19,6 @@ from datetime import datetime, timedelta
 import uuid
 from dotenv import load_dotenv
 import pillow_avif
-import traceback
 
 load_dotenv()
 
@@ -161,20 +160,16 @@ def handle_message(message):
                     # Добавляем сортировку и ограничение
                     pipeline.extend([
                         {"$sort": SON(sort_order)},
-                        # {"$limit": message[3]}
+                        {"$limit": message[3]}
                     ])
             else:
                 # Добавляем сортировку и ограничение
                 pipeline.extend([
                     {"$sort": SON(sort_order)},
-                    # {"$limit": message[3]}
+                    {"$limit": message[3]}
                 ])
             # Выполняем агрегацию
-            try:
-                cards = list(mongo.db.cards.aggregate(pipeline).limit(message[3]))
-            except:
-                traceback.print_exc()
-                cards = list(mongo.db.cards.aggregate(pipeline))
+            cards = list(mongo.db.cards.aggregate(pipeline))
             for card in cards:
                 images = list(mongo.db.images.find({"card_id": card["_id"]}))
                 for image in images:
