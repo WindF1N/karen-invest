@@ -160,16 +160,19 @@ def handle_message(message):
                     # Добавляем сортировку и ограничение
                     pipeline.extend([
                         {"$sort": SON(sort_order)},
-                        {"$limit": message[3]}
+                        # {"$limit": message[3]}
                     ])
             else:
                 # Добавляем сортировку и ограничение
                 pipeline.extend([
                     {"$sort": SON(sort_order)},
-                    {"$limit": message[3]}
+                    # {"$limit": message[3]}
                 ])
             # Выполняем агрегацию
-            cards = list(mongo.db.cards.aggregate(pipeline))
+            try:
+                cards = list(mongo.db.cards.aggregate(pipeline).limit(message[3]))
+            except:
+                cards = list(mongo.db.cards.aggregate(pipeline))
             for card in cards:
                 images = list(mongo.db.images.find({"card_id": card["_id"]}))
                 for image in images:
