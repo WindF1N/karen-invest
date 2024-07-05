@@ -122,7 +122,7 @@ function Add() {
       sendMessage(JSON.stringify(["images", "add", cardId, indexOfLoadedImage.current + 1, images[indexOfLoadedImage.current + 1].file]));
     } else if (cardId) {
       setSaving(false);
-      navigate("/search?card_id=" + cardId, { replace: true });
+      navigate("/card/" + cardId, { replace: true });
     }
   }, [cardId, indexOfLoadedImage.current])
   const [ variables, setVariables ] = useState([]);
