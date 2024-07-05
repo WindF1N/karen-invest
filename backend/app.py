@@ -148,7 +148,7 @@ def handle_message(message):
                 if message[4] == 0:
                     # Добавляем рандом
                     pipeline.extend([
-                        { "$sample": { "size": 1 } }
+                        { "$sample": { "size": message[3] } }
                     ])
             # Добавляем $addFields после первого $match
             pipeline.append({"$addFields": {"price_number": {"$toInt": {"$replaceAll": {"input": {"$replaceAll": {"input": "$price", "find": "₽", "replacement": ""}}, "find": " ", "replacement": ""}}}}})
