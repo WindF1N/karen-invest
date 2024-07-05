@@ -144,7 +144,7 @@ def handle_message(message):
             pipeline = [
                 {"$match": reverse_prepare_data(message[2])},  # Фильтрация по message[2]
             ]
-            if message[4]:
+            if len(message) > 4:
                 if message[4] == 0:
                     # Добавляем рандом
                     pipeline.extend([
