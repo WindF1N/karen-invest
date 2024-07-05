@@ -149,11 +149,24 @@ def handle_message(message):
             # Добавляем фильтрацию по цене, если она определена
             if min_max_prices_match is not None:
                 pipeline.append({"$match": min_max_prices_match})
-            # Добавляем сортировку и ограничение
-            pipeline.extend([
-                {"$sort": SON(sort_order)},
-                {"$limit": message[3]}
-            ])
+            if message[4]:
+                if message[4] == 0:
+                    # Добавляем рандом
+                    pipeline.extend([
+                        { "$sample": { "size": message[3] } }
+                    ])
+                else:
+                    # Добавляем сортировку и ограничение
+                    pipeline.extend([
+                        {"$sort": SON(sort_order)},
+                        {"$limit": message[3]}
+                    ])
+            else:
+                # Добавляем сортировку и ограничение
+                pipeline.extend([
+                    {"$sort": SON(sort_order)},
+                    {"$limit": message[3]}
+                ])
             # Выполняем агрегацию
             cards = list(mongo.db.cards.aggregate(pipeline))
             for card in cards:
