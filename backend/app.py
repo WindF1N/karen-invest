@@ -121,9 +121,9 @@ def handle_message(message):
                 if message[4] == 0:
                     sort_order.append(('views_count', -1))  # Популярные - по убыванию views_count
                 elif message[4] == 1:
-                    sort_order.append(('price_number', 1))  # Дорогие - по возрастанию price_number
+                    sort_order.append(("price_number", 1))  # Дорогие - по возрастанию price_number
                 elif message[4] == 2:
-                    sort_order.append(('price_number', -1))  # Недорогие - по убыванию price_number
+                    sort_order.append(("price_number", -1))  # Недорогие - по убыванию price_number
             except:
                 pass
             # Добавляем сортировку по умолчанию, если не выбрано иное
