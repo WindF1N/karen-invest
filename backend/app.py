@@ -115,7 +115,7 @@ def handle_message(message):
 
     if message[0] == "cards":
         if message[1] == "filter":
-            mongo.cards.update_many(
+            mongo.db.cards.update_many(
             {},
             [{
                 "$set": {
