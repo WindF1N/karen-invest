@@ -41,9 +41,9 @@ function Post({ postData, type, parent, basePathUrl }) {
   const toggle = () => {
     window.history.replaceState({}, '', '/card/' + data._id);
     if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) {
-      sendMessage(JSON.stringify(["cards", "filter", {}, 6]))
+      sendMessage(JSON.stringify(["cards", "filter", {}, 6, 0]))
     } else {
-      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": false}, 6]))
+      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": false}, 6, 0]))
     }
     api.start({ transform: "scale(1.05)", config: { duration: 200 } });
     setTimeout(() => {
