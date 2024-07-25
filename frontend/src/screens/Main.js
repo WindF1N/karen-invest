@@ -38,9 +38,9 @@ function Main() {
   useEffect(() => {
     window.scrollTo({top: 0, smooth: "behavior"});
     if (account?.user?.username === "thecreatxr" || account?.user?.username === "Mr_Romadanov" || account?.user?.user_id === 956105079) {
-      sendMessage(JSON.stringify(["cards", "filter", {}, 7]));
+      sendMessage(JSON.stringify(["cards", "filter", {}, 5]));
     } else {
-      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 7]));
+      sendMessage(JSON.stringify(["cards", "filter", {"is_hidden": {"$ne": true}}, 5]));
     }
     if (cardId) {
       sendMessage(JSON.stringify(["cards", "filter", {"_id": cardId}, 1]))
@@ -244,13 +244,15 @@ function Main() {
         </div>
       </div>
       <footer className={styles.footer} style={theme === "Dark" ? {borderTop: ".5px solid #e1e1e1"} : null}>
-        <div className={styles.contacts} style={{flexFlow: "column", alignItems: "flex-start", gap: 10, marginTop: 20}}>
+        <div className={styles.contacts} style={{alignItems: "center", gap: 10, marginTop: 20}}>
           <div className={styles.telephone} style={theme === "Dark" ? {color: "#000"} : null}><a href="tel:+79388784402" style={{ textDecoration: 'none', color: 'inherit' }}>+7 938 878 44 02</a></div>
           <div className={styles.icons}>
-            <img src={require("./images/telegram.svg").default} className="" alt="telegram" />
-            <img src={require("./images/whatsapp.svg").default} className="" alt="whatsapp" />
-            <img src={require("./images/viber.svg").default} className="" alt="viber" />
-            <img src={require("./images/vkontakte.svg").default} className="" alt="vk" />
+            <a href="https://t.me/+79388784402" target="_blank" rel="noopener noreferrer">
+              <img src={require("./images/telegram.svg").default} alt="telegram" />
+            </a>
+            <a href="https://wa.me/79388784402" target="_blank" rel="noopener noreferrer">
+              <img src={require("./images/whatsapp.svg").default} alt="whatsapp" />
+            </a>
           </div>
         </div>
         <div className={styles.labelBy}>

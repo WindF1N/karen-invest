@@ -14,6 +14,7 @@ function Search() {
   const cardId = params.get('card_id');
   const { sendMessage, message, setMessage, theme, setTheme, account } = useMainContext();
   const navigate = useNavigate();
+  const [ ready, setReady ] = useState(false);
   const [ view, setView ] = useState("grid");
   const [ sortBy, setSortBy ] = useState("Сначала популярные");
   const [ posts, setPosts ] = useState([]);
@@ -52,11 +53,13 @@ function Search() {
     "Жилое помещение",
     "Здание",
     "Магазин",
-    "Земельный участок"
+    "Земельный участок", 
+    "Таунхаусы"
   ]
   const [ selectedTypes, setSelectedTypes ] = useState(["Все"]);
   const [ price, setPrice ] = useState([]);
   useEffect(() => {
+    console.log(window.location.pathname)
     if (message && window.location.pathname === "/search") {
       if (message[0] === 'cards') {
         if (message[1] === 'filter') {
@@ -64,6 +67,9 @@ function Search() {
             const isInMessage = prevState.some(msgItem => msgItem._id === item._id);
             return !isInMessage;
           })]);
+          if (!ready) {
+            setReady(true)
+          }
         }
       }
       setMessage(null);
@@ -115,7 +121,7 @@ function Search() {
         sendMessage(JSON.stringify(["cards", "filter", {}, 100, sort, price]));
       }
     }
-    if (cardId) {
+    if (cardId && ready) {
       sendMessage(JSON.stringify(["cards", "filter", {"_id": cardId}, 1]))
     }
   }, [sortBy, price, selectedTypes])

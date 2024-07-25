@@ -133,23 +133,23 @@ function Contact() {
               </div>
               {type === 1 ?
               <div style={{paddingTop: 10}}>
-                <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)"}}>
-                  Telegram
-                </div>
-                <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)"}}>
-                  WhatsApp
-                </div>
-                <div style={{padding: "20px", fontSize: 16, fontWeight: 300}}>
-                  Viber
-                </div>
+                <a href="https://t.me/+79388784402" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}>
+                  <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)", color: "#fff"}}>
+                    Telegram
+                  </div>
+                </a>
+                <a href="https://wa.me/79388784402" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}>
+                  <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)", color: "#fff"}}>
+                    WhatsApp
+                  </div>
+                </a>
               </div> :
               <div style={{paddingTop: 10}}>
-                <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)"}}>
-                  8 (800) 700-70-70
-                </div>
-                <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)"}}>
-                  +7 966 77 57 966
-                </div>
+                <a href="tel:+79388784402" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div style={{padding: "20px", fontSize: 16, fontWeight: 300, borderBottom: "0.5px solid rgb(24, 24, 26)", color: "#fff"}}>
+                    +7 938 878 44 02
+                  </div>
+                </a>
               </div>}
               <div style={{padding: "20px", position: "absolute", bottom: 0, left: 0, width: "100%", boxSizing: "border-box"}}>
                 <Button text="Закрыть" small={true} handleClick={(e) => {

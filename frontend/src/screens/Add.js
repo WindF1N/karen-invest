@@ -69,7 +69,7 @@ function Add() {
       label: "Тип недвижимости",
       type: "select",
       choices: [
-        "Не выбрано", "Квартиры", "Апартаменты", "Новостройки", "Дом", "Жилое помещение", "Здание", "Магазин", "Земельный участок"
+        "Не выбрано", "Квартиры", "Апартаменты", "Новостройки", "Дом", "Жилое помещение", "Здание", "Магазин", "Земельный участок", "Таунхаусы"
       ]
     },
     "code": {
@@ -122,7 +122,7 @@ function Add() {
       sendMessage(JSON.stringify(["images", "add", cardId, indexOfLoadedImage.current + 1, images[indexOfLoadedImage.current + 1].file]));
     } else if (cardId) {
       setSaving(false);
-      navigate("/card/" + cardId, { replace: true });
+      navigate("/search?card_id=" + cardId, { replace: true });
     }
   }, [cardId, indexOfLoadedImage.current])
   const [ variables, setVariables ] = useState([]);

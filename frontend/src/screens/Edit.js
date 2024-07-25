@@ -146,7 +146,7 @@ function Edit() {
       sendMessage(JSON.stringify(["images", "add", cardId, indexOfLoadedImage.current + 1, images[indexOfLoadedImage.current + 1].file]));
     } else if (cardId) {
       setSaving(false);
-      navigate("/card/" + cardId, { replace: true });
+      navigate("/search?card_id=" + cardId, { replace: true });
     }
   }, [cardId, indexOfLoadedImage.current])
   useEffect(() => {
@@ -170,96 +170,95 @@ function Edit() {
     }
   }, [card])
   const [ variables, setVariables ] = useState([]);
-  if (!saving && card) {
-    return (
-      <div className="view">
-        <div className={styles.wrapper} style={{marginBottom: 20}}>
-          <Slider images={images}
-                  imagesDivRef={imagesDivRef}
-                  setActiveImage={setActiveImage}
-                  canAdd={true}
-                  activeImage={activeImage}
-                  setImages={setImages}
-                  maxImagesCount={10}
-                  photosError={photosError}
-                  setPhotosError={setPhotosError}
-                  />
-          {images.length > 0 &&
-            <MiniSlider images={images}
-                        imagesDivRef={imagesDivRef}
-                        activeImage={activeImage}
-                        canAdd={true}
-                        setImages={setImages}
-                        maxImagesCount={10}
-                        />}
-        </div>
-        <Formik
-          initialValues={Object.keys(inputs).reduce((acc, key) => {
-            acc[key] = inputs[key].value || ''; // Используем значение или пустую строку по умолчанию
-            return acc;
-          }, {})}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-        {({ errors, touched, handleSubmit, values }) => (
-          <Form>
-            <div className={styles.flex20gap}>
-              <FormLIGHT inputs={Object.entries(inputs)} setInputs={setInputs} errors={errors} touched={touched} />
-              <AddVariable variables={variables} setVariables={setVariables} />
-              <Button text="Сохранить" handleClick={handleSubmit} />
-              <div style={{display: "flex", alignItems: "center", gap: 10}}>
-                <div style={{fontWeight: 300}}>Скрыть карточку</div>
-                <animated.div 
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
-                    width: 46,
-                    height: 26,
-                    borderRadius: 26,
-                    background: "rgb(24, 24, 26)",
-                    ...wrapperProps
-                  }}
-                  onClick={() => {
-                    setIsHidden(!isHidden);
-                    if (!isHidden) {
-                      wrapperApi.start({ background: "rgb(24, 24, 26)", config: { duration: 200 } });
-                      wrapperApi.set({ background: "rgb(24, 24, 26)" });
-                      divApi.start({ transform: "translateX(20px)", background: "#32D058", config: { duration: 200 } });
-                      divApi.set({ transform: "translateX(20px)", background: "#32D058" });
-                    } else {
-                      wrapperApi.start({ background: "rgb(24, 24, 26)", config: { duration: 200 } });
-                      wrapperApi.set({ background: "rgb(24, 24, 26)" });
-                      divApi.start({ transform: "translateX(0px)", background: "rgba(102, 102, 102, 0.35)", config: { duration: 200 } });
-                      divApi.set({ transform: "translateX(0px)", background: "rgba(102, 102, 102, 0.35)" });
-                    }
-                  }}
-                >
-                  <animated.div style={{
-                    backgroundColor: isHidden ? "#32D058" : "rgba(102, 102, 102, 0.35)",
-                    borderRadius: 26,
-                    height: 22,
-                    margin: 2,
-                    transition: ".2s",
-                    width: 22,
-                    ...divProps
-                  }}></animated.div>
-                </animated.div>
-              </div>
-              <div style={{display: "flex", alignItems: "center", justifyContent: "center", color: "#EF0E37", padding: 20, marginTop: 50}} onClick={() => {
-                sendMessage(JSON.stringify(["cards", "delete", account, id]));
-                setSaving(true);
-              }}>
-                Удалить карточку
-              </div>
-            </div>
-            <ScrollToError/>
-          </Form>
-        )}
-        </Formik>
-        {saving && <LoadingHover />}
+  return (
+    <div className="view">
+      <div className={styles.wrapper} style={{marginBottom: 20}}>
+        <Slider images={images}
+                imagesDivRef={imagesDivRef}
+                setActiveImage={setActiveImage}
+                canAdd={true}
+                activeImage={activeImage}
+                setImages={setImages}
+                maxImagesCount={10}
+                photosError={photosError}
+                setPhotosError={setPhotosError}
+                />
+        {images.length > 0 &&
+          <MiniSlider images={images}
+                      imagesDivRef={imagesDivRef}
+                      activeImage={activeImage}
+                      canAdd={true}
+                      setImages={setImages}
+                      maxImagesCount={10}
+                      />}
       </div>
-    );
-  }
+      {(card && !saving) &&
+      <Formik
+        initialValues={Object.keys(inputs).reduce((acc, key) => {
+          acc[key] = inputs[key].value || ''; // Используем значение или пустую строку по умолчанию
+          return acc;
+        }, {})}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+      {({ errors, touched, handleSubmit, values }) => (
+        <Form>
+          <div className={styles.flex20gap}>
+            <FormLIGHT inputs={Object.entries(inputs)} setInputs={setInputs} errors={errors} touched={touched} />
+            <AddVariable variables={variables} setVariables={setVariables} />
+            <Button text="Сохранить" handleClick={handleSubmit} />
+            <div style={{display: "flex", alignItems: "center", gap: 10}}>
+              <div style={{fontWeight: 300}}>Скрыть карточку</div>
+              <animated.div 
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  width: 46,
+                  height: 26,
+                  borderRadius: 26,
+                  background: "rgb(24, 24, 26)",
+                  ...wrapperProps
+                }}
+                onClick={() => {
+                  setIsHidden(!isHidden);
+                  if (!isHidden) {
+                    wrapperApi.start({ background: "rgb(24, 24, 26)", config: { duration: 200 } });
+                    wrapperApi.set({ background: "rgb(24, 24, 26)" });
+                    divApi.start({ transform: "translateX(20px)", background: "#32D058", config: { duration: 200 } });
+                    divApi.set({ transform: "translateX(20px)", background: "#32D058" });
+                  } else {
+                    wrapperApi.start({ background: "rgb(24, 24, 26)", config: { duration: 200 } });
+                    wrapperApi.set({ background: "rgb(24, 24, 26)" });
+                    divApi.start({ transform: "translateX(0px)", background: "rgba(102, 102, 102, 0.35)", config: { duration: 200 } });
+                    divApi.set({ transform: "translateX(0px)", background: "rgba(102, 102, 102, 0.35)" });
+                  }
+                }}
+              >
+                <animated.div style={{
+                  backgroundColor: isHidden ? "#32D058" : "rgba(102, 102, 102, 0.35)",
+                  borderRadius: 26,
+                  height: 22,
+                  margin: 2,
+                  transition: ".2s",
+                  width: 22,
+                  ...divProps
+                }}></animated.div>
+              </animated.div>
+            </div>
+            <div style={{display: "flex", alignItems: "center", justifyContent: "center", color: "#EF0E37", padding: 20, marginTop: 50}} onClick={() => {
+              sendMessage(JSON.stringify(["cards", "delete", account, id]));
+              setSaving(true);
+            }}>
+              Удалить карточку
+            </div>
+          </div>
+          <ScrollToError/>
+        </Form>
+      )}
+      </Formik>}
+      {saving && <LoadingHover />}
+    </div>
+  );
 }
 
 export default Edit;

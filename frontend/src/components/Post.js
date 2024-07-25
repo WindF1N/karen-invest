@@ -407,11 +407,11 @@ function Post({ postData, type, parent, basePathUrl }) {
                                   borderTopLeftRadius: 25, 
                                   borderTopRightRadius: 25, 
                                   position: "relative",
-                                  marginTop: "10vh",
+                                  marginTop: "15vh",
                                   ...modalPropsMain}}
                           ref={modalMainRef}>
               <div
-                style={{position: "absolute", top: "-10vh", height: "20vh", width: "100vw", display: "flex", justifyContent: "center", zIndex: 1}}
+                style={{position: "absolute", top: "-15vh", height: "25vh", width: "100vw", display: "flex", justifyContent: "center", zIndex: 1}}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}

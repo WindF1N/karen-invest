@@ -18,7 +18,10 @@ const Navigate = () => {
   const { loading } = useMainContext();
 
   useEffect(() => {
+    const app = window.Telegram.WebApp;
+    app.ready()
     window.Telegram.WebApp.expand();
+    app.isVerticalSwipesEnabled = false;
   }, [window.Telegram.WebApp])
 
   return (
