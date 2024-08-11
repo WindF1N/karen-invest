@@ -58,7 +58,7 @@ def convert_price_to_number(price_string):
     # Преобразуем в число
     return int(cleaned_price)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='/home/karen-invest/backend/static')
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 1024  # 16 megabytes
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -92,7 +92,7 @@ def serve(path):
     if path != "" and os.path.exists(app.static_folder + '/' + path):
         return send_from_directory(app.static_folder, path)
     else:
-        return send_from_directory(app.static_folder, 'index.html')
+	    return send_from_directory(app.static_folder, 'index.html')
 
 @socketio.on('connect')
 def handle_connect():
